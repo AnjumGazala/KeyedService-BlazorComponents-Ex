@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+
+<h3>LuckyNumbers</h3>
+<br/>
+<hr/>
+<div class="text-success h3">Title</div>
+<button class="btn btn-success" onclick="GenerateNumbers">Generate Numbers</button>
+
+@if (RandomNumber > 0)
+{
+    <p class="p-2">Random Numbers - RandomNumber</p>
+}
+@code {
+    public int RandomNumber { get; set; } = 0;
+
+    private void GenerateNumbers()
+    {
+        Random rnd = new();
+        RandomNumber = rnd.Next(1, 100);
+    }
+
+}
